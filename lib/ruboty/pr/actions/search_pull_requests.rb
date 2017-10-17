@@ -36,7 +36,7 @@ module Ruboty
           repos = Hash.new { |hash, key| hash[key] = [] }
           issues.each do |issue|
             next unless issue.pull_request
-            repo_name = "#{issue.repository.name}##{issue.number}"
+            repo_name = issue.repository.name
             repos[repo_name] << issue
           end
           repos
